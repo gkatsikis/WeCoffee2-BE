@@ -7,6 +7,7 @@ class Profile(db.Model):
     name = db.Column(db.String(100), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    beans_id = db.Column(db.Integer, db.ForeignKey('beans.id'))
 
     def serialize(self):
       profile = {c.name: getattr(self, c.name) for c in self.__table__.columns}
