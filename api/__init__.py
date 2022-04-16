@@ -11,6 +11,7 @@ from api.models.bean import Bean
 
 # ============ Import Views ============
 from api.views.auth import auth
+from api.views.beans import beans
 
 cors = CORS()
 migrate = Migrate() 
@@ -26,7 +27,7 @@ def create_app(config):
 
   # ============ Register Blueprints ============
   app.register_blueprint(auth, url_prefix='/api/auth')
-  app.register_blueprint(auth, url_prefix='/api/beans')
+  app.register_blueprint(beans, url_prefix='/api/beans')
 
   return app
 
