@@ -43,3 +43,16 @@ def update(id):
 
   db.session.commit()
   return jsonify(bean.serialize()), 200
+
+@beans.route('<id>', methods=["DELETE"])
+@login_required
+def delete(id):
+  profile = read_token(request)
+  bean = Bean.query.filter_by(id=id).first()
+
+  if bean.profile_id != profile["id"]:
+    return 'Forbidden', 403
+
+  db.session.delete(bean)
+  db.session.commit()
+  return jsonify(message="Success"), 200
