@@ -13,9 +13,11 @@ from api.models.bean import Bean
 from api.views.auth import auth
 from api.views.beans import beans
 
-cors = CORS()
-migrate = Migrate() 
 list = ['GET', 'HEAD', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE', 'LINK']
+
+cors = CORS()
+
+migrate = Migrate() 
 
 def create_app(config):
   app = Flask(__name__)
