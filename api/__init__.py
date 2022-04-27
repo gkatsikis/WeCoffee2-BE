@@ -31,7 +31,7 @@ def create_app(config):
   # ============ Register Blueprints ============
   app.register_blueprint(auth, url_prefix='/api/auth')
   app.register_blueprint(beans, url_prefix='/api/beans')
-  app.register_blueprint(profiles, url_prefix='api/profiles')
+  app.register_blueprint(profiles, url_prefix='/api/profiles')
 
   return app
 
