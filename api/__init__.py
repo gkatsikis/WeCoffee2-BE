@@ -12,6 +12,7 @@ from api.models.bean import Bean
 # ============ Import Views ============
 from api.views.auth import auth
 from api.views.beans import beans
+from api.views.profiles import profiles
 
 list = ['GET', 'HEAD', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE', 'LINK']
 
